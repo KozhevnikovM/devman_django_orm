@@ -1,19 +1,20 @@
 from datacenter.models import Passcard
 from datacenter.models import Visit
 from django.shortcuts import render
+from .helpers import *
 
 
 def storage_information_view(request):
-    # Программируем здесь
-
     non_closed_visits = [
         {
-            "who_entered": "Richard Shaw",
-            "entered_at": "11-04-2018 25:34",
-            "duration": "25:03",
+            "who_entered": visit.passcard.owner_name,
+            "entered_at": visit.entered_at,
+            "duration": format_duration(get_duration(visit)),
+            "is_strange": is_visit_long(visit, 3600)
         }
+        for visit in Visit.objects.all().filter(leaved_at=None)
     ]
     context = {
-        "non_closed_visits": non_closed_visits,  # не закрытые посещения
+        "non_closed_visits": non_closed_visits,
     }
     return render(request, 'storage_information.html', context)
