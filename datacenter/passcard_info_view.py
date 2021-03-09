@@ -10,7 +10,7 @@ def passcard_info_view(request, passcode):
         {
             "entered_at": visit.entered_at,
             "duration": visit.format_duration(),
-            "is_strange": visit.is_visit_long(3600)
+            "is_strange": visit.is_visit_long()
         } 
         for visit in Visit.objects.all().filter(passcard=current_passcard)
     ]

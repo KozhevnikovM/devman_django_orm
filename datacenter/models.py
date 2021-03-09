@@ -26,7 +26,7 @@ class Visit(models.Model):
         return (visit.leaved_at - visit.entered_at).total_seconds()
 
 
-    def is_visit_long(self, limit):
+    def is_visit_long(self, limit=3600):
         return self.get_duration() > limit
 
     def format_duration(self):
