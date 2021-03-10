@@ -25,7 +25,7 @@ DB_PASSWORD - database password
 ## How to run
 
 ```bash
-python main.py
+python manage.py runserver
 ```
 
 
