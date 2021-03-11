@@ -1,4 +1,5 @@
-# Devman Django-ORM Lesson 1
+# Пульт охраны банка
+Интерфейс к базе данных о посещениях банковского хранилища. Анализирует информацию о посещении хранилища. Выявляет подозрительные посещения. Написан с использованием [Django](https://www.djangoproject.com/)
 
 ## System requirements:
 python3.5+
@@ -10,13 +11,19 @@ pip install -r requirements.txt
 ```
 
 ## Setup your credentials:
-Rename example.env to .env and specify it with your credentials
-DEBUG - Debug mode. Default is False.
-DB_HOST - database address
-DB_PORT - database port
-DB_NAME - database name
-DB_USER - database user
-DB_PASSWORD - database password
+Rename ```example.env``` to ```.env``` 
+```bash
+mv example.env .env
+```
+and specify it with your credentials:
+```
+DEBUG= #Debug mode. Default is False.
+DB_HOST= #your database address
+DB_PORT= #database port
+DB_NAME= #database name
+DB_USER= #database user
+DB_PASSWORD= #database password
+```
 
 ## How to run
 
